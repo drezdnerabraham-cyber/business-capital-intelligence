@@ -89,6 +89,8 @@ All designs are editable in Canva. Click the edit URL to open, customize text/co
 
 ## Remaining Designs Needed (Canva Quota Reset Required)
 
+**Note:** Canva's AI generation quota is per-session. All 8 completed designs were generated in the first session. The 19 designs below require a fresh Canva session (open a new conversation / log out and back in to Canva). Generate in batches of 4–5 and save candidate IDs immediately.
+
 The following designs hit the session generation quota and need to be created in a new session:
 
 | Day | Topic | Type | Format |
@@ -159,7 +161,7 @@ When creating remaining designs or editing existing ones, use:
 | Day 9 | Week 2, Tue | Education — NSF Fees | ⏳ Needs design |
 | Day 10 | Week 2, Wed | Vertical — Restaurant | ⏳ Needs design |
 | Day 11 | Week 2, Thu | FAQ — Credit Score | ⏳ Needs design |
-| Day 12 | Week 2, Fri | Video — Factor vs Interest Rate | ⚡ Video: use ElevenLabs pipeline |
+| Day 12 | Week 2, Fri | Video — Factor vs Interest Rate | ✅ Fliki scenario 5960583 — retrieve from Fliki dashboard |
 | Day 13 | Week 2, Sat | Carousel — Myth vs Fact | ⏳ Needs design |
 | Day 14 | Week 2, Sun | Trust — Strong Application | ⏳ Needs design |
 | Day 15 | Week 3, Mon | Vertical — Contractors | ✅ Canva DAHSdZ-7tdw |
@@ -174,32 +176,34 @@ When creating remaining designs or editing existing ones, use:
 | Day 24 | Week 4, Wed | FAQ — Carousel | ⏳ Needs design |
 | Day 25 | Week 4, Thu | Soft CTA — Underfunded? | ⏳ Needs design |
 | Day 26 | Week 4, Fri | Vertical — Retail/Inventory | ⏳ Needs design |
-| Day 27 | Week 4, Sat | Video — UCC Explained | ⚡ Video: use ElevenLabs pipeline |
+| Day 27 | Week 4, Sat | Video — UCC Explained | ✅ Fliki scenario 5960584 — retrieve from Fliki dashboard |
 | Day 28 | Week 4, Sun | Trust — Backstone Promise | ⏳ Needs design |
 | Day 29 | Week 4, Mon | CTA — Readiness Checklist | ✅ Canva DAHSdUd55-w |
 | Day 30 | Week 4, Tue | CTA — 30-Day Invitation | ⏳ Needs design |
 
-**Legend:** ✅ Design ready in Canva | ⏳ Generate in next session | ⚡ Special format (text-only or video)
+**Legend:** ✅ Asset ready | ⏳ Canva design needed (generate when quota resets — new Canva session) | ⚡ Text-only post (no graphic needed)
 
 ---
 
-## Video Content Plan (ElevenLabs Pipeline)
+## Video Content Plan (Fliki Pipeline)
 
-Leverage the existing Make.com ElevenLabs TTS scenarios for these Reel/video posts:
+Both video Reels have been rendered via dedicated Make.com → Fliki scenarios. Check your Fliki dashboard for the exported MP4 files.
 
 ### Day 12 — Factor Rate vs Interest Rate (60 sec)
 **Script:**
 "When a bank charges interest, the cost compounds over time — and if you pay early, you save. A Merchant Cash Advance uses something called a factor rate. It works differently. Take the advance amount — say fifty thousand dollars — multiply it by the factor rate — say one point three five — and you get your total repayment: sixty seven thousand five hundred dollars. You're paying seventeen thousand five hundred for access to that capital. This is not an APR. It doesn't change if you repay early. Understanding this number — the total repayment — is the single most important thing you can do before signing any MCA agreement. If a funder won't tell you the total repayment upfront, that's your answer. Backstone Capital Connect. Transparent terms. Every time."
 
-**Make.com scenario:** s5775183_aff_render_eleven_labs or s5781703_aff_eleven_labs_tts_natural_voice
-**Visual:** Animated text on dark navy background, gold highlights on key numbers
+**Make.com scenario:** `Backstone — Day 12 — Factor Rate vs Interest Rate (60s Reel)` (ID: 5960583)
+**Status:** ✅ Rendered — retrieve MP4 from Fliki dashboard, filename: `Backstone-Day12-Factor-Rate-vs-Interest-Rate.mp4`
+**Visual:** Cinematic AI visuals, 9:16 vertical (Reels format), highlighted subtitles
 
 ### Day 27 — What Is a UCC Filing? (45 sec)
 **Script:**
 "When you receive a merchant cash advance, the funder files something called a UCC-1 lien against your business's receivables. This is completely standard — it's not a judgment, it's not a credit mark, and it doesn't hurt your personal credit. What it does do is notify other potential funders that your receivables are already committed. Here's why this matters: if you have multiple recent UCC filings — especially three or more in ninety days — that's what's called stacking, and it will affect both your ability to get additional funding and the terms you'll receive. Understanding your UCC situation before you apply puts you in a stronger position. Backstone Capital Connect. We'll tell you exactly where you stand."
 
-**Make.com scenario:** s5775183_aff_render_eleven_labs or s5781703_aff_eleven_labs_tts_natural_voice
-**Visual:** Animated text + simple document graphic, navy and gold
+**Make.com scenario:** `Backstone — Day 27 — What Is a UCC Filing? (45s Reel)` (ID: 5960584)
+**Status:** ✅ Rendered — retrieve MP4 from Fliki dashboard, filename: `Backstone-Day27-UCC-Filing-Explained.mp4`
+**Visual:** Cinematic AI visuals, 9:16 vertical (Reels format), highlighted subtitles
 
 ---
 
