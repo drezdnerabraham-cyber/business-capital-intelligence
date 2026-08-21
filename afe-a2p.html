@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFE International - Business Funding Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9fafb;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section {
+            padding: 70px 20px;
+        }
+
+        section h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .business-info {
+            background: white;
+            border-radius: 10px;
+            padding: 50px;
+            margin: 50px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .info-block {
+            border-left: 4px solid #3b82f6;
+            padding-left: 25px;
+        }
+
+        .info-block h4 {
+            font-size: 16px;
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-block p {
+            font-size: 18px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .info-block a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-block a:hover {
+            text-decoration: underline;
+        }
+
+        .section-light {
+            background: #f3f4f6;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .compliance-box {
+            background: white;
+            border-left: 5px solid #3b82f6;
+            padding: 35px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .compliance-box h4 {
+            color: #0f172a;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .compliance-box ul {
+            list-style-position: inside;
+            color: #555;
+            line-height: 2;
+        }
+
+        .compliance-box li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h5 {
+            color: #60a5fa;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            color: #d1d5db;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-section a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 25px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        .highlight {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 12px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">AFE International</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#sms">SMS Communications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Connecting Businesses to Capital</h1>
+            <p>AFE International bridges the gap between growing businesses and qualified funders, providing reliable lending and communication solutions.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section-white">
+        <div class="container">
+            <h2>About AFE International</h2>
+            <p style="text-align: center; font-size: 18px; color: #555; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                AFE International is a registered business funding platform that connects qualified businesses with capital providers and funders. We facilitate transparent, legitimate business lending relationships with reliable communication throughout the process.
+            </p>
+
+            <div class="business-info">
+                <h3 style="color: #0f172a; margin-bottom: 10px; font-size: 24px; font-weight: 700;">Company Information</h3>
+                <p style="color: #666; margin-bottom: 30px;">Registered business providing business-to-business lending connection and communication services.</p>
+
+                <div class="info-row">
+                    <div class="info-block">
+                        <h4>Legal Name</h4>
+                        <p>AFE International</p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Federal EIN</h4>
+                        <p>86-3752256</p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Primary Phone</h4>
+                        <p><a href="tel:3474694652">(347) 469-4652</a></p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Business Email</h4>
+                        <p><a href="mailto:outreach@acquireclientsfaster.com">outreach@acquireclientsfaster.com</a></p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Business Type</h4>
+                        <p>Lending Platform & Funders Network</p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Operating Status</h4>
+                        <p>Active & Operational</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>Our Platform Services</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Business Loan Matching</h3>
+                    <p>We connect qualified businesses with appropriate capital providers and lenders. Our verification process ensures legitimate business transactions and proper funding matches.</p>
+                </div>
+                <div class="card">
+                    <h3>Funder Network</h3>
+                    <p>Access to a network of qualified funders and capital providers. We facilitate direct connections between businesses seeking capital and investors ready to fund growth.</p>
+                </div>
+                <div class="card">
+                    <h3>Application Management</h3>
+                    <p>Streamlined application and approval process for businesses seeking funding. Clear documentation, verification, and communication at every step of the journey.</p>
+                </div>
+                <div class="card">
+                    <h3>Lending Facilitation</h3>
+                    <p>We facilitate legitimate B2B lending relationships. Our platform ensures transparency, proper documentation, and compliance throughout the lending process.</p>
+                </div>
+                <div class="card">
+                    <h3>Business Verification</h3>
+                    <p>Comprehensive business verification and due diligence. We ensure all parties are legitimate businesses conducting proper financial transactions.</p>
+                </div>
+                <div class="card">
+                    <h3>Secure Communication</h3>
+                    <p>Reliable business communication channels between applicants, funders, and our platform. Verified, authentic messaging for business notifications and updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sms" class="section-white">
+        <div class="container">
+            <h2>A2P SMS Communications</h2>
+            <p style="text-align: center; font-size: 18px; color: #555; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                AFE International uses Application-to-Person (A2P) SMS messaging for legitimate business communications. Our SMS service is used exclusively for authorized business notifications, updates, and communications between our platform and verified business users.
+            </p>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Loan Status Updates</h3>
+                    <p>Businesses receive SMS notifications about their loan application status, approvals, and next steps. Time-sensitive information delivered securely.</p>
+                </div>
+                <div class="card">
+                    <h3>Application Notifications</h3>
+                    <p>Confirmation of received applications, required documentation, and review progress. Authenticated messages from our verified platform.</p>
+                </div>
+                <div class="card">
+                    <h3>Funding Alerts</h3>
+                    <p>Qualified businesses receive notifications about matched funders and capital opportunities. Direct, business-to-business communication.</p>
+                </div>
+                <div class="card">
+                    <h3>Payment & Disbursement Notifications</h3>
+                    <p>Authenticated SMS alerts for payment processing, fund disbursement, and transaction confirmations. Secure business communication.</p>
+                </div>
+                <div class="card">
+                    <h3>Document Requests</h3>
+                    <p>SMS notifications requesting required documentation and verification materials from applicants. Clear, direct business communication.</p>
+                </div>
+                <div class="card">
+                    <h3>Appointment Confirmations</h3>
+                    <p>Business appointment and call confirmations for underwriting, verification, and funding discussions.</p>
+                </div>
+            </div>
+
+            <div class="business-info">
+                <h3 style="color: #0f172a; margin-bottom: 20px;">SMS Usage Policy</h3>
+                <p style="color: #555; margin-bottom: 25px;">AFE International's A2P SMS communications are used exclusively for:</p>
+                <ul style="list-style-position: inside; color: #555; line-height: 2; margin-left: 20px;">
+                    <li>✓ Business-to-business loan application updates and status notifications</li>
+                    <li>✓ Verification of applicant business information</li>
+                    <li>✓ Funder matching notifications and funding opportunity alerts</li>
+                    <li>✓ Payment and disbursement confirmations</li>
+                    <li>✓ Required documentation requests</li>
+                    <li>✓ Appointment confirmations and follow-ups</li>
+                    <li>✓ Authorized service communications from our verified platform</li>
+                </ul>
+                <p style="color: #666; margin-top: 25px; font-size: 14px;">
+                    <span class="highlight">No promotional messages, no unsolicited marketing, no spam.</span> All SMS communications are sent to users who have opted in and consented to receive business notifications from AFE International.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>Compliance & Standards</h2>
+
+            <div class="compliance-box">
+                <h4>Carrier Compliance</h4>
+                <ul>
+                    <li>TCPA (Telephone Consumer Protection Act) compliance for all SMS communications</li>
+                    <li>Proper opt-in and consent management for all recipients</li>
+                    <li>Verified business sender authentication and identification</li>
+                    <li>Message content compliance with carrier standards</li>
+                    <li>Legitimate business use case documentation</li>
+                    <li>Regular compliance audits and monitoring</li>
+                </ul>
+            </div>
+
+            <div class="compliance-box">
+                <h4>A2P SMS Standards</h4>
+                <ul>
+                    <li>Exclusive use for legitimate business communications</li>
+                    <li>Business-to-business messaging only</li>
+                    <li>Verified recipient consent and opt-in documentation</li>
+                    <li>Clear sender identification (AFE International)</li>
+                    <li>Complete message audit trail and logging</li>
+                    <li>Compliance with all carrier requirements</li>
+                </ul>
+            </div>
+
+            <div class="compliance-box">
+                <h4>Data Security & Privacy</h4>
+                <ul>
+                    <li>Secure handling of all business and customer information</li>
+                    <li>Encrypted communication channels</li>
+                    <li>Restricted access to business data</li>
+                    <li>Regular security reviews and updates</li>
+                    <li>Compliance with privacy regulations</li>
+                    <li>Transparent data handling practices</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-white">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p style="text-align: center; font-size: 18px; color: #555; margin-bottom: 50px;">
+                Contact AFE International for business funding inquiries, partnership opportunities, or questions about our services.
+            </p>
+
+            <div class="business-info">
+                <div class="info-row">
+                    <div class="info-block">
+                        <h4>Business Phone</h4>
+                        <p><a href="tel:3474694652" style="font-size: 20px; font-weight: 600;">(347) 469-4652</a></p>
+                        <p style="font-size: 13px; color: #999; margin-top: 5px;">Business hours: Monday-Friday, 9 AM - 6 PM EST</p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Business Email</h4>
+                        <p><a href="mailto:outreach@acquireclientsfaster.com" style="font-size: 18px; font-weight: 600;">outreach@acquireclientsfaster.com</a></p>
+                        <p style="font-size: 13px; color: #999; margin-top: 5px;">Response within 24 business hours</p>
+                    </div>
+                    <div class="info-block">
+                        <h4>Company Legal Name</h4>
+                        <p>AFE International</p>
+                        <p style="font-size: 13px; color: #999; margin-top: 5px;">EIN: 86-3752256</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h5>AFE International</h5>
+                <p>Business Funding & Lending Platform</p>
+                <p>EIN: 86-3752256</p>
+                <p>Connecting businesses with capital</p>
+            </div>
+            <div class="footer-section">
+                <h5>Contact Information</h5>
+                <p>Phone: <a href="tel:3474694652">(347) 469-4652</a></p>
+                <p>Email: <a href="mailto:outreach@acquireclientsfaster.com">outreach@acquireclientsfaster.com</a></p>
+                <p>Business Hours: M-F, 9 AM - 6 PM EST</p>
+            </div>
+            <div class="footer-section">
+                <h5>Services</h5>
+                <p>Business Loan Matching</p>
+                <p>Funder Network Access</p>
+                <p>Lending Facilitation</p>
+                <p>A2P SMS Communications</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AFE International. All rights reserved. | Licensed Business Platform | EIN: 86-3752256</p>
+        </div>
+    </footer>
+</body>
+</html>
