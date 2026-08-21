@@ -2,7 +2,7 @@ name: Deploy site to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master, claude/mca-lead-generation-research-ap1usa]
     paths:
       - 'site/**'
       - '.github/workflows/deploy-pages.yml'

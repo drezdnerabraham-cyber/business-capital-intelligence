@@ -52,9 +52,16 @@ cd site && python3 -m http.server 8000
 
 ### GitHub Pages
 
-`.github/workflows/deploy-pages.yml` publishes `site/` on every push to the default branch.
-Enable it once under **Settings → Pages → Build and deployment → Source: GitHub Actions**, then
-re-run the workflow. The live URL is `https://<owner>.github.io/<repo>/`.
+`.github/workflows/deploy-pages.yml` publishes `site/` on every push to the default branch, and can
+also be run manually from the **Actions** tab.
+
+Pages has to be turned on once by a repository admin — it cannot be enabled through the API from a
+sandboxed session:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+2. **Actions → Deploy site to GitHub Pages → Run workflow.**
+
+The live URL is then `https://<owner>.github.io/<repo>/`.
 
 ## Before you submit for A2P 10DLC
 
