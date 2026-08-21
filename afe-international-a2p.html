@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFE International - Business Funding Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a9eff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4a9eff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4a9eff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #357abd;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1a1a2e;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            font-size: 38px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+
+        section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 40px 30px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: #4a9eff;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .alt-bg {
+            background: #f5f5f5;
+        }
+
+        .form-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #4a9eff;
+        }
+
+        .checkbox-item {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .legal-links {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        .legal-links a {
+            color: #4a9eff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+
+        .faq-q {
+            cursor: pointer;
+            font-weight: 600;
+            color: #1a1a2e;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-q:hover {
+            color: #4a9eff;
+        }
+
+        .faq-a {
+            display: none;
+            margin-top: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-a.active {
+            display: block;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .team-member h4 {
+            font-size: 18px;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: #4a9eff;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .team-member .bio {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 {
+            margin-bottom: 15px;
+            color: #4a9eff;
+        }
+
+        footer p, footer a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        footer a:hover {
+            color: #4a9eff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .stat-num {
+            font-size: 32px;
+            font-weight: 700;
+            color: #4a9eff;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 40px auto;
+            line-height: 1.8;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .legal-content h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #1a1a2e;
+        }
+
+        .legal-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .page-title {
+            background: #1a1a2e;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .page-title h1 {
+            font-size: 42px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .team-grid, .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">AFE International</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Connect Your Business to Capital</h1>
+            <p>AFE International connects growing businesses with vetted funders and capital providers. We're not lenders—we're your bridge to funding success.</p>
+            <a href="#contact" class="btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="alt-bg">
+        <div class="container">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">24-48h</div>
+                    <div class="stat-label">Funding Speed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Free Consultation</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4+</div>
+                    <div class="stat-label">Funding Types</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">USA</div>
+                    <div class="stat-label">Nationwide Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About AFE International</h2>
+            <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                AFE International is an independent business funding broker connecting revenue-generating businesses with vetted funding providers. We simplify the capital connection process so business owners can focus on growth.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Our Mission</h3>
+                    <p>To simplify business funding by connecting business owners with the right capital partners. We evaluate your business, match you with suitable providers, and guide you through the entire process.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Approach</h3>
+                    <p>We're a broker, not a lender. We don't make credit decisions—we connect you with specialists who do. This means transparent, no-pressure partnerships focused on finding your best fit.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Promise</h3>
+                    <p>Full transparency about our role, competitive rates from vetted providers, professional guidance at every step, and respect for your business and privacy.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 50px; text-align: center;">Meet Our Team</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23e0e0e0' width='150' height='150'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23999' text-anchor='middle' dominant-baseline='central'%3E%3C/text%3E%3C/svg%3E" alt="Team Member">
+                    <h4>Business Funding Specialist</h4>
+                    <p>Funding Coordination</p>
+                    <div class="bio">Dedicated to matching your business with the right capital partners and guiding you through the approval process.</div>
+                </div>
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23e0e0e0' width='150' height='150'/%3E%3C/svg%3E" alt="Team Member">
+                    <h4>Capital Relations Team</h4>
+                    <p>Provider Partnerships</p>
+                    <div class="bio">Maintains relationships with our network of vetted funding providers to ensure competitive terms for our clients.</div>
+                </div>
+                <div class="team-member">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23e0e0e0' width='150' height='150'/%3E%3C/svg%3E" alt="Team Member">
+                    <h4>Client Success Manager</h4>
+                    <p>Customer Support</p>
+                    <div class="bio">Available to answer questions and support you throughout your funding journey with AFE International.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="alt-bg">
+        <div class="container">
+            <h2>Funding Solutions</h2>
+            <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                We connect you with providers offering a range of financial products tailored to your business needs.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Working Capital</h3>
+                    <p>Flexible funding for day-to-day operations, payroll, inventory, and growth initiatives. Repayment terms vary based on your revenue and provider.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Merchant Cash Advances</h3>
+                    <p>For businesses with consistent card sales. Repayment is tied to daily sales, providing flexibility during slower periods.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Equipment Financing</h3>
+                    <p>Finance the equipment you need to grow. No large upfront costs—partner directly with equipment financing specialists.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Lines of Credit</h3>
+                    <p>Access funds as needed and only pay interest on what you use. Draw when opportunities arise, pay back on your timeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>1. Contact Us</h3>
+                    <p>Call (347) 469-4652 or fill out our contact form to discuss your business funding needs and goals.</p>
+                </div>
+                <div class="card">
+                    <h3>2. We Evaluate</h3>
+                    <p>We assess your monthly revenue, time in business, and industry to identify the best-fit funding options for your situation.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Get Matched</h3>
+                    <p>We connect you with the most suitable funding provider from our vetted network and guide you through the application process.</p>
+                </div>
+                <div class="card">
+                    <h3>4. Get Funded</h3>
+                    <p>Once approved, funding can be available within 24-48 hours depending on the provider and product you select.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="alt-bg">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        Does AFE International lend money directly?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a">
+                        No. AFE International is a broker, not a lender. We do not lend directly, underwrite loans, or make credit decisions. All funding is provided by third-party funding specialists in our network. We connect you with the provider that best fits your business needs.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        What types of businesses do you work with?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a">
+                        We work with businesses across the United States in a wide range of industries. Whether you run a restaurant, retail store, medical practice, trucking company, or any other type of business, we can help match you with the right funding solution based on your revenue and goals.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        How fast can I get funded?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a">
+                        Once matched with a provider and approved, funding can be available within 24-48 hours depending on the funding product and provider. The entire process from first contact to funding can move very quickly.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        Is there a cost for your service?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a">
+                        Our consultation is free. We earn a referral fee from the funding providers in our network—you do not pay us directly. The terms and costs of any funding product will be clearly disclosed by the provider before you commit.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        What do I need to qualify?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a">
+                        Requirements vary by provider and product, but generally you'll need to demonstrate consistent monthly revenue and have been in business for a minimum period. We evaluate your profile and match you with providers whose criteria you're most likely to meet.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">
+                        How do I opt out of SMS messages?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a">
+                        You can opt out at any time by replying STOP to any text message you receive from us. We will confirm your removal and you will no longer receive SMS messages. You can also reply HELP for assistance or call us at (347) 469-4652.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 40px;">
+                Ready to explore your funding options? Contact us today and let's find the right capital solution for your business.
+            </p>
+
+            <div class="form-section">
+                <div style="margin-bottom: 40px; text-align: center;">
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong> <a href="tel:3474694652" style="color: #4a9eff; text-decoration: none;">(347) 469-4652</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:outreach@acquireclientsfaster.com" style="color: #4a9eff; text-decoration: none;">outreach@acquireclientsfaster.com</a></p>
+                    <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM EST</p>
+                    <p style="margin-top: 20px; color: #666;">AFE International | EIN: 86-3752256</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: none; border-top: 1px solid #e0e0e0;">
+
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="fname">First Name *</label>
+                        <input type="text" id="fname" name="fname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lname">Last Name *</label>
+                        <input type="text" id="lname" name="lname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name *</label>
+                        <input type="text" id="business" name="business" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell us about your funding needs *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <strong style="display: block; margin-bottom: 15px; color: #1a1a2e;">SMS Communication Consent</strong>
+
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="consent1" name="consent1" value="transactional">
+                            <label for="consent1">
+                                <strong>I consent to receive transactional messages</strong> related to my funding inquiry from AFE International DBA AFE International, including application updates, status notifications, and account-related reminders. These messages may be sent via SMS. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out.
+                            </label>
+                        </div>
+
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="consent2" name="consent2" value="marketing">
+                            <label for="consent2">
+                                <strong>I consent to receive marketing and promotional messages</strong> from AFE International DBA AFE International, including special offers, funding opportunities, and new product updates. These messages may be sent via SMS. Message frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>Privacy Notice:</strong> AFE International does not share your SMS opt-in information with any third parties or affiliates for marketing purposes. Your phone number and consent records are kept strictly confidential and used only to provide our direct services.
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; padding: 15px;">Submit & Get Started</button>
+
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms & Conditions</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section id="privacy" style="padding: 40px 20px;">
+        <div class="container">
+            <h2 style="text-align: left;">Privacy Policy</h2>
+            <div class="legal-content">
+                <p><strong>Effective Date: August 21, 2026</strong></p>
+                <p><strong>AFE International DBA AFE International</strong> ("we," "us," "our") is committed to protecting your privacy.</p>
+
+                <div class="highlight">
+                    <strong>IMPORTANT NOTICE:</strong> AFE International DOES NOT share customer opt-in information, including phone numbers and consent records, with any affiliates or third parties for marketing, promotional, or any other purposes unrelated to providing our direct services. All text messaging originator opt-in data is kept strictly confidential.
+                </div>
+
+                <h3>1. Information We Collect</h3>
+                <ul>
+                    <li><strong>Personal Information:</strong> Name, email address, phone number, business name, and funding needs</li>
+                    <li><strong>Consent Information:</strong> SMS opt-in records, timestamps, and consent selections</li>
+                    <li><strong>Technical Information:</strong> IP address, browser type, and device information</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li>Evaluating whether your business may qualify for funding referrals</li>
+                    <li>Connecting you with appropriate funding providers</li>
+                    <li>Communicating about your inquiry and funding opportunities</li>
+                    <li>Sending SMS notifications about your application status</li>
+                    <li>Maintaining records of consent and communication preferences</li>
+                </ul>
+
+                <h3>3. SMS Messaging & Compliance</h3>
+                <ul>
+                    <li><strong>Opt-In & Consent:</strong> You only receive SMS if you explicitly opt in. We maintain timestamped records of all consent.</li>
+                    <li><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe immediately. No further messages will be sent unless you re-opt in.</li>
+                    <li><strong>Help:</strong> Reply HELP to any message for assistance.</li>
+                    <li><strong>Compliance:</strong> We comply with TCPA and all applicable SMS messaging regulations.</li>
+                    <li><strong>Age:</strong> You must be 18 years or older to participate in our SMS program.</li>
+                </ul>
+
+                <h3>4. Data Protection</h3>
+                <p><strong>CRITICAL STATEMENT ON SMS DATA:</strong> All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties, excluding aggregators and providers of the text message services.</p>
+
+                <h3>5. Sharing Your Information</h3>
+                <p>We may share your business and funding information with vetted funding providers in our network to facilitate potential funding matches. We do NOT share your SMS opt-in data with any third parties for any purpose other than direct service provision.</p>
+
+                <h3>6. Security</h3>
+                <p>We implement appropriate security measures to protect your personal information from unauthorized access or disclosure.</p>
+
+                <h3>7. Contact Us</h3>
+                <p>Questions about this Privacy Policy? Contact us at (347) 469-4652 or outreach@acquireclientsfaster.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions -->
+    <section id="terms" style="padding: 40px 20px;">
+        <div class="container">
+            <h2 style="text-align: left;">Terms & Conditions</h2>
+            <div class="legal-content">
+                <p><strong>Effective Date: August 21, 2026</strong></p>
+                <p>These Terms & Conditions govern your use of AFE International's services.</p>
+
+                <h3>1. Service Description</h3>
+                <p>AFE International is a business funding broker. We connect qualified businesses with vetted funding providers. We do not lend money directly or make credit decisions. All funding is provided by third-party specialists in our network.</p>
+
+                <h3>2. Eligibility</h3>
+                <p>You must be at least 18 years old and own or operate a business in the United States to use our services. Your business must have verifiable monthly revenue.</p>
+
+                <h3>3. No Guarantee of Funding</h3>
+                <p>AFE International does not guarantee approval, funding amounts, terms, or rates. Funding is subject to the provider's underwriting and approval process. Each provider has different criteria and requirements.</p>
+
+                <h3>4. Use of Personal Information</h3>
+                <p>By submitting your information, you consent to AFE International sharing your business details with funding providers in our network for the purpose of evaluating your application and providing funding matches.</p>
+
+                <h3>5. SMS Messaging Terms</h3>
+                <ul>
+                    <li>You control your SMS consent choices through checkboxes on our opt-in form</li>
+                    <li>You can opt out at any time by replying STOP to any message</li>
+                    <li>Standard message and data rates may apply per your carrier</li>
+                    <li>Message frequency varies based on your application status</li>
+                    <li>We comply with all TCPA regulations</li>
+                </ul>
+
+                <h3>6. Limitation of Liability</h3>
+                <p>AFE International is not responsible for funding provider decisions, loan terms, or application outcomes. We act solely as a broker to facilitate connections.</p>
+
+                <h3>7. Intellectual Property</h3>
+                <p>All content on this website is owned by AFE International. You may not reproduce or distribute content without written permission.</p>
+
+                <h3>8. Changes to Terms</h3>
+                <p>We may update these terms at any time. Continued use of our services constitutes acceptance of updated terms.</p>
+
+                <h3>9. Contact Us</h3>
+                <p>Questions about these Terms? Contact us at (347) 469-4652 or outreach@acquireclientsfaster.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>AFE International</h4>
+                    <p>Business funding broker connecting businesses with vetted capital providers.</p>
+                    <p><strong>EIN:</strong> 86-3752256</p>
+                    <p style="margin-top: 15px; font-size: 12px; color: #999;">Providing legitimate A2P SMS communications for funding inquiries and status updates.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms & Conditions</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p><strong>Phone:</strong> (347) 469-4652</p>
+                    <p><strong>Email:</strong> outreach@acquireclientsfaster.com</p>
+                    <p><strong>Hours:</strong> Mon-Fri, 9AM-6PM EST</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AFE International. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const span = element.querySelector('span');
+
+            document.querySelectorAll('.faq-a').forEach(el => {
+                if (el !== answer) el.classList.remove('active');
+            });
+            document.querySelectorAll('.faq-q span').forEach(s => {
+                if (s !== span) s.textContent = '+';
+            });
+
+            answer.classList.toggle('active');
+            span.textContent = answer.classList.contains('active') ? '−' : '+';
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our team will contact you within 24 hours at the phone number you provided.\n\nYou have successfully opted in to receive SMS communications about your funding inquiry from AFE International.');
+            document.querySelector('form').reset();
+        }
+    </script>
+</body>
+</html>
