@@ -1,0 +1,44 @@
+{
+  "lenders": [
+    {
+      "id": "lender-1",
+      "name": "LENDER NAME HERE",
+      "email": "submissions@lender.com",
+      "priority": 1,
+      "requirements": {
+        "industries": {
+          "allowed": ["restaurant", "retail", "trucking", "construction", "healthcare", "salon", "auto", "any"],
+          "blocked": []
+        },
+        "min_time_in_business_months": 6,
+        "entity_types": ["LLC", "Corporation", "Sole Proprietor", "Partnership"],
+        "states": ["any"],
+        "notes": "Add any notes about this lender here"
+      },
+      "email_template": {
+        "subject": "New Business Funding Application – {business_name}",
+        "intro": "Please find the details of a new funding application below."
+      }
+    },
+    {
+      "id": "lender-2",
+      "name": "SECOND LENDER NAME",
+      "email": "funding@lender2.com",
+      "priority": 2,
+      "requirements": {
+        "industries": {
+          "allowed": ["any"],
+          "blocked": ["gambling", "adult entertainment"]
+        },
+        "min_time_in_business_months": 12,
+        "entity_types": ["LLC", "Corporation"],
+        "states": ["NY", "NJ", "CT", "FL", "TX", "CA"],
+        "notes": "Prefers established businesses with at least 1 year in operation"
+      },
+      "email_template": {
+        "subject": "Funding Application – {business_name} ({industry})",
+        "intro": "Submitting the following application for your review."
+      }
+    }
+  ]
+}
