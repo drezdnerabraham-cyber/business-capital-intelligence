@@ -1,5 +1,7 @@
 #!/bin/bash
-# Run this from your local machine to deploy to Vercel.
+# Fallback: the mcalenderintel Vercel project is now connected directly to
+# this repo/branch via Git integration, so pushes here deploy automatically.
+# Only run this script if you need to deploy manually from a local machine.
 # Prerequisites: npm install -g vercel && vercel login
 
 set -e
