@@ -30,10 +30,11 @@ export async function GET(req) {
 }
 
 export async function PATCH(req) {
-  // Update credit_score or other fields on application
+  // Update credit_score/status on an application via the admin_update_application RPC
+  // (applications holds PII, so writes are allowlisted server-side, not a raw table update).
   const sb = adminClient()
   const { id, ...fields } = await req.json()
-  const { data, error } = await sb.from('applications').update(fields).eq('id', id).select().single()
+  const { data, error } = await sb.rpc('admin_update_application', { p_id: id, payload: fields })
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json(data)
 }

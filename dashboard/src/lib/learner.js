@@ -86,7 +86,7 @@ export async function runLearningAnalysis(supabase) {
 }
 
 export async function acceptSuggestion(supabase, suggestion) {
-  const updates = { [suggestion.field_name]: suggestion.suggested_value, updated_at: new Date().toISOString() }
-  await supabase.from('lenders').update(updates).eq('id', suggestion.lender_id)
+  const payload = { [suggestion.field_name]: suggestion.suggested_value }
+  await supabase.rpc('admin_update_lender', { p_id: suggestion.lender_id, payload })
   await supabase.from('lender_suggestions').update({ status: 'accepted', reviewed_at: new Date().toISOString() }).eq('id', suggestion.id)
 }

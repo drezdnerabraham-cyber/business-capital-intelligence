@@ -28,7 +28,7 @@ export async function GET() {
 export async function POST(req) {
   const sb = adminClient()
   const body = await req.json()
-  const { data, error } = await sb.from('lenders').insert(body).select().single()
+  const { data, error } = await sb.rpc('admin_insert_lender', { payload: body })
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json(data, { status: 201 })
 }
