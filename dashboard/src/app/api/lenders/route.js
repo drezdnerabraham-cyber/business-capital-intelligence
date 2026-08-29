@@ -1,9 +1,12 @@
 export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 import { adminClient } from '@/lib/supabase'
+import { requireUser } from '@/lib/auth'
 
 export async function GET() {
   const sb = adminClient()
+  const auth = await requireUser(sb)
+  if (auth.response) return auth.response
   const { data, error } = await sb
     .from('lenders')
     .select(`*, submissions(id, status)`)
@@ -27,6 +30,8 @@ export async function GET() {
 
 export async function POST(req) {
   const sb = adminClient()
+  const auth = await requireUser(sb)
+  if (auth.response) return auth.response
   const body = await req.json()
   const { data, error } = await sb.rpc('admin_insert_lender', { payload: body })
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })

@@ -1,9 +1,12 @@
 export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 import { adminClient } from '@/lib/supabase'
+import { requireUser } from '@/lib/auth'
 
 export async function GET(req) {
   const sb = adminClient()
+  const auth = await requireUser(sb)
+  if (auth.response) return auth.response
   const { searchParams } = new URL(req.url)
   const days = parseInt(searchParams.get('days') || '90')
   const since = new Date(Date.now() - days * 86400 * 1000).toISOString()

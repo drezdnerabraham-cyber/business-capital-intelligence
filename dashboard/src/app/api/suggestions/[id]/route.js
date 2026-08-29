@@ -1,10 +1,17 @@
 export const dynamic = 'force-dynamic'
 import { NextResponse } from 'next/server'
 import { adminClient } from '@/lib/supabase'
+import { requireUser } from '@/lib/auth'
+import { isUuid, badRequest } from '@/lib/validate'
 import { acceptSuggestion } from '@/lib/learner'
 
 export async function PATCH(req, { params }) {
   const sb = adminClient()
+  const auth = await requireUser(sb)
+  if (auth.response) return auth.response
+
+  if (!isUuid(params.id)) return badRequest('id')
+
   const { action } = await req.json()
 
   if (action === 'accept') {
