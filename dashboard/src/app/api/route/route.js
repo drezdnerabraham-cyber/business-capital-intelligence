@@ -1,10 +1,39 @@
 export const dynamic = 'force-dynamic'
+import crypto from 'crypto'
 import { NextResponse } from 'next/server'
 import { adminClient } from '@/lib/supabase'
 import { routeApplication } from '@/lib/router'
 
+// Constant-time compare of two strings; returns false on any length mismatch
+// (timingSafeEqual throws on unequal lengths, which itself leaks).
+function safeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false
+  const ab = Buffer.from(a)
+  const bb = Buffer.from(b)
+  if (ab.length !== bb.length) return false
+  return crypto.timingSafeEqual(ab, bb)
+}
+
+async function isAuthorized(req, sb) {
+  // Option 1: the external form tool presents x-webhook-secret.
+  const secret = process.env.WEBHOOK_SECRET
+  const provided = req.headers.get('x-webhook-secret')
+  if (secret && provided && safeEqual(provided, secret)) return true
+
+  // Option 2: an authenticated admin triggers a re-route from the dashboard UI.
+  const { data: { user } } = await sb.auth.getUser()
+  if (user) return true
+
+  return false
+}
+
 export async function POST(req) {
   const sb = adminClient()
+
+  if (!(await isAuthorized(req, sb))) {
+    return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+  }
+
   const { application_id } = await req.json()
 
   if (!application_id) {
