@@ -1,4 +1,4 @@
-# Netlify deployment configuration for the AFE Connect static site.
+# Netlify deployment configuration for the Fenmark Connect static site.
 # The site is plain HTML/CSS with no build step; `publish` points at this folder.
 
 [build]
@@ -22,7 +22,7 @@
 
 [[redirects]]
   from = "/apply"
-  to = "https://apply.afeconnect.net/apply"
+  to = "https://apply.fenmarkconnect.net/apply"
   status = 302
   force = true
 
