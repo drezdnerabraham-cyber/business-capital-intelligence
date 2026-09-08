@@ -1,6 +1,6 @@
-# AFE Capital Connect — static website
+# AFE Connect — static website
 
-A four-page static site for **AFE Capital Connect**, a service of **AFE International LLC**.
+A four-page static site for **AFE Connect**, a service of **AFE International LLC**.
 Built for **A2P 10DLC** SMS campaign registration: the required consent, opt-out, help, frequency,
 rate and mobile-information-sharing disclosures are present and publicly reachable.
 
@@ -70,7 +70,7 @@ The live URL is then `https://<owner>.github.io/<repo>/`.
 - [ ] The consent language on the landing page matches the opt-in language you describe in the campaign
       registration form, word for word.
 - [ ] If you register a hosted opt-in web form, the form at
-      `apply.afecapital.net/apply` shows the same consent language and an **unchecked** consent
+      `apply.afeconnect.net/apply` shows the same consent language and an **unchecked** consent
       checkbox, and you can produce a screenshot of it for the carrier.
 
 ## Things to review before going live
