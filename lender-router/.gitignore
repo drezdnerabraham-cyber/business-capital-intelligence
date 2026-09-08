@@ -1,0 +1,4 @@
+node_modules/
+.env
+config/gmail-token.json
+config/gmail-credentials.json

@@ -1,0 +1,65 @@
+{
+  "_instructions": "Add your lender requirements here. Each lender has 'criteria' that must ALL match for routing. The first lender whose criteria match gets the application. Put your preferred/best lenders first.",
+  "lenders": [
+    {
+      "id": "lender_a",
+      "name": "LENDER NAME A",
+      "contact_email": "submissions@lendera.com",
+      "contact_name": "Underwriting Team",
+      "criteria": {
+        "monthly_revenue_min": 25000,
+        "monthly_revenue_max": null,
+        "time_in_business_months_min": 12,
+        "credit_score_min": 550,
+        "credit_score_max": null,
+        "loan_amount_min": 10000,
+        "loan_amount_max": 500000,
+        "industries_allowed": [],
+        "industries_blocked": ["gambling", "adult entertainment", "firearms"],
+        "states_allowed": [],
+        "states_blocked": []
+      },
+      "notes": "Replace with your actual lender A requirements"
+    },
+    {
+      "id": "lender_b",
+      "name": "LENDER NAME B",
+      "contact_email": "deals@lenderb.com",
+      "contact_name": "Funding Team",
+      "criteria": {
+        "monthly_revenue_min": 10000,
+        "monthly_revenue_max": 24999,
+        "time_in_business_months_min": 6,
+        "credit_score_min": 500,
+        "credit_score_max": null,
+        "loan_amount_min": 5000,
+        "loan_amount_max": 150000,
+        "industries_allowed": [],
+        "industries_blocked": ["gambling", "adult entertainment"],
+        "states_allowed": [],
+        "states_blocked": []
+      },
+      "notes": "Replace with your actual lender B requirements"
+    },
+    {
+      "id": "fallback_lender",
+      "name": "FALLBACK LENDER",
+      "contact_email": "apply@fallbacklender.com",
+      "contact_name": "Applications",
+      "criteria": {
+        "monthly_revenue_min": 5000,
+        "monthly_revenue_max": null,
+        "time_in_business_months_min": 3,
+        "credit_score_min": 450,
+        "credit_score_max": null,
+        "loan_amount_min": 2500,
+        "loan_amount_max": 50000,
+        "industries_allowed": [],
+        "industries_blocked": [],
+        "states_allowed": [],
+        "states_blocked": []
+      },
+      "notes": "Catches deals that don't match above lenders"
+    }
+  ]
+}
