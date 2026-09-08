@@ -70,7 +70,7 @@ The live URL is then `https://<owner>.github.io/<repo>/`.
 - [ ] The consent language on the landing page matches the opt-in language you describe in the campaign
       registration form, word for word.
 - [ ] If you register a hosted opt-in web form, the form at
-      `apply.afecapital.net/apply` shows the same consent language and an **unchecked** consent
+      `apply.afecapitalconnect.com/apply` shows the same consent language and an **unchecked** consent
       checkbox, and you can produce a screenshot of it for the carrier.
 
 ## Things to review before going live
